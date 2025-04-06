@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Package, ArrowRight } from 'lucide-react';
+import { Package, ArrowRight, Link } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2 mb-4">
               <Package className="h-8 w-8 text-delivery-primary" />
-              <span className="text-xl font-bold text-white">Flash Livraison</span>
+              <span className="text-xl font-bold text-white">BMD</span>
             </div>
             <p className="text-sm text-gray-400">
               Service de livraison rapide et fiable pour tous vos besoins. Nous livrons n'importe où, n'importe quand.
@@ -111,22 +111,18 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Newsletter */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-6">Newsletter</h3>
-            <p className="text-gray-400 text-sm mb-4">
-              Inscrivez-vous pour recevoir nos offres spéciales et mises à jour.
-            </p>
-            <div className="flex items-center space-x-2">
-              <Input 
-                placeholder="Votre email" 
-                className="bg-gray-800 border-gray-700 text-gray-300 focus:ring-delivery-primary"
-              />
-              <Button className="bg-delivery-primary hover:bg-delivery-primary/90 text-white">
-                S'abonner
-              </Button>
-            </div>
-          </div>
+          <div className="pt-4">
+  <a 
+    href="/PrivacyPolicyPage" 
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center px-4 py-4 bg-gradient-to-r from-blue-400 to-purple-400 text-white font-medium text-sm leading-tight rounded-md shadow-md hover:shadow-xl hover:scale-105 focus:shadow-xl focus:outline-none focus:ring-0 active:opacity-35 transition transform duration-150 ease-in-out"
+  >
+    Mentions légales <span className="ml-2">→</span>
+  </a>
+</div>
+
+         
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm">

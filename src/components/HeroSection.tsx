@@ -1,80 +1,88 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Truck, PackageOpen, Clock } from 'lucide-react';
+import { Truck, Clock, ShieldCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   return (
-    <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
-      <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
-          <div className="space-y-6 z-10">
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight animate-fade-in">
-              Livraison <span className="text-gradient">Rapide</span> et <span className="text-gradient">Fiable</span>
-            </h1>
-            <p className="text-lg text-gray-600 max-w-lg animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            BMD est une société située au cœur de la capitale économique du royaume
-            de maroc, notre société dispose de plusieurs compétences dédiée
-            à la satisfaction de nos clients
-            </p>
-            <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-              <Button className="btn-gradient px-8 py-6 text-lg">
-              DEVENIR CLIENT
-              </Button>
-              <Button variant="outline" className="px-8 py-6 text-lg border-delivery-primary text-delivery-primary hover:bg-delivery-primary/10">
-                Nos Services
-              </Button>
-            </div>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-6 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-              <div className="text-center p-3 bg-white rounded-lg shadow-animated">
-                <h3 className="text-3xl font-bold text-delivery-primary">15m</h3>
-                <p className="text-sm text-gray-500">Temps moyen</p>
-              </div>
-              <div className="text-center p-3 bg-white rounded-lg shadow-animated">
-                <h3 className="text-3xl font-bold text-delivery-primary">99%</h3>
-                <p className="text-sm text-gray-500">Satisfaction</p>
-              </div>
-              <div className="text-center p-3 bg-white rounded-lg shadow-animated">
-                <h3 className="text-3xl font-bold text-delivery-primary">24/7</h3>
-                <p className="text-sm text-gray-500">Disponibilité</p>
-              </div>
-            </div>
+    <>
+      <div className="h-16 md:h-20"></div>
+      
+      <section className="relative overflow-hidden min-h-screen flex items-center">
+        {/* Fond vidéo avec overlay */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <div className="absolute inset-0 bg-gray-900">
+            <iframe
+              className="absolute inset-0 w-full h-full object-cover scale-110 origin-center"
+              src="https://www.youtube.com/embed/YluhsPMQSVE?autoplay=1&mute=1&loop=1&playlist=YluhsPMQSVE&controls=0&showinfo=0&start=6"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="BMD Delivery Video"
+            ></iframe>
           </div>
-          
-          <div className="flex items-center justify-center w-full p-8">
-      <div className="relative">
-        <div className="bg-gradient-to-br from-blue-400/20 to-purple-500/20 rounded-full h-80 w-80 animate-spin-slow flex items-center justify-center">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="rounded-full overflow-hidden w-64 h-64 border-4 border-white shadow-lg">
-              <img
-                src="https://img.freepik.com/free-photo/delivery-trucks-road-out-smartphone-carry-goods-customer-home-with-location-pointer-bubble-chat-message-ecommerce-concept-blue-background-3d-illustration_56104-1811.jpg?uid=R134444413&ga=GA1.1.1809202442.1705419947&semt=ais_hybrid&w=740"
-                alt="Livraison Illustration"
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/70 via-blue-800/40 to-blue-900/70"></div>
+        </div>
+        
+        {/* Contenu avec animations */}
+        <div className="container mx-auto relative z-10 px-6 py-24">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8 z-10"
+            >
+              {/* Titre principal */}
+              <motion.div 
+                initial={{ scale: 0.9 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2 }}
+                className="bg-blue-800/80 px-8 py-6 rounded-xl backdrop-blur-sm max-w-2xl"
+              >
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                  Livraison <span className="text-amber-400">Express</span> au Maroc
+                </h1>
+              </motion.div>
+
+           
+              {/* Texte avec opacité réduite */}
+              <p className="text-lg text-gray-100 max-w-lg mt-6 bg-blue-900/50 px-4 py-3 rounded-lg">
+                BMD est une société située au cœur de la capitale économique du royaume
+                de maroc, notre société dispose de plusieurs compétences dédiée
+                à la satisfaction de nos clients
+              </p>
+              {/* Boutons CTA */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+                className="flex flex-wrap gap-4 mt-6"
+              >
+                <Button className="bg-amber-500 hover:bg-amber-600 px-8 py-6 text-lg font-semibold text-white shadow-lg hover:shadow-amber-500/30 transition-all">
+                  Livrer avec BMD
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="px-8 py-6 text-lg border-2 border-white text-black hover:bg-white/10 hover:text-white"
+                >
+                  Devenir Client
+                </Button>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
-      </div>
-    </div>
-        </div>
-      </div>
-      
-      {/* Animated Truck */}
-      <div className="absolute bottom-10 w-full">
-        <Truck className="text-delivery-secondary h-16 w-16 animate-truck-move" />
-      </div>
-      
-      {/* Floating elements */}
-      <div className="absolute top-20 right-20">
-        <PackageOpen className="text-delivery-primary h-12 w-12 animate-float" style={{ animationDelay: "1s" }}/>
-      </div>
-      <div className="absolute bottom-40 left-10">
-        <Clock className="text-delivery-accent h-10 w-10 animate-float" style={{ animationDelay: "2s" }}/>
-      </div>
-    </section>
+
+        {/* Indicateur de scroll */}
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        >
+          <div className="w-6 h-6 border-2 border-white rounded-full"></div>
+        </motion.div>
+      </section>
+    </>
   );
 };
 

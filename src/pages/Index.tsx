@@ -11,6 +11,9 @@ import Footer from '@/components/Footer';
 import { useToast } from '@/hooks/use-toast';
 import { useEffect } from 'react';
 import AboutPage from '@/components/AboutPage';
+import { ToastProvider } from '@/components/ui/toast';
+import Cities from '@/components/Cities';
+
 
 const Index = () => {
   const { toast } = useToast();
@@ -36,6 +39,7 @@ const Index = () => {
 
         <ServicesSection />
         <TestimonialsSection /><br />
+        <Cities/>
       
         <ContactSection />
       </main>

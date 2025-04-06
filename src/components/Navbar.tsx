@@ -35,7 +35,7 @@ const Navbar = () => {
           {/* Logo */}
           <a href="#" className="flex items-center space-x-2">
             <Package className="h-8 w-8 text-delivery-primary animate-pulse-light" />
-            <span className="text-xl font-bold text-gradient">BDM</span>
+            <span className="text-xl font-bold text-gradient">BMD</span>
           </a>
 
           {/* Desktop Navigation */}
