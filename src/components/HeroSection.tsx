@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '@/components/ui/button';
 import { Truck, Clock, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -44,7 +43,7 @@ const HeroSection = () => {
                   Livraison <span className="text-amber-400">Express</span> au Maroc
                 </h1>
               </motion.div>
-
+              
               {/* Texte avec opacité réduite */}
               <p className="text-lg text-gray-100 max-w-lg mt-6 bg-blue-900/50 px-4 py-3 rounded-lg">
                 BMD est une société située au cœur de la capitale économique du royaume
@@ -52,31 +51,29 @@ const HeroSection = () => {
                 à la satisfaction de nos clients
               </p>
               
-              {/* Boutons CTA */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-                className="flex flex-wrap gap-4 mt-6"
-              >
-                <a href="/contact">
-                <Button className="bg-amber-500 hover:bg-amber-600 px-8 py-6 text-lg font-semibold text-white shadow-lg hover:shadow-amber-500/30 transition-all">
-                  Livrer avec BMD
-                </Button>
-                </a>
-                <a href="/login">
-  <Button
-    variant="outline"
-    className="px-8 py-6 text-lg border-2 border-white text-black hover:bg-white/10 hover:text-white"
+              <motion.div 
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.6 }}
+  className="flex flex-wrap gap-4 mt-6"
+>
+  <a 
+    href="/contact" 
+    className="bg-amber-500 hover:bg-amber-600 px-6 py-3 text-lg font-semibold text-white shadow-lg hover:shadow-amber-500/30 transition-all rounded-lg inline-block"
   >
-   CONNEXION
-  </Button>
-</a>
-              </motion.div>
+    Livrer avec BMD
+  </a>
+  <a 
+    href="/login" 
+    className="px-6 py-3 text-lg border-2 border-white text-white hover:bg-white/10 rounded-lg inline-block transition-all"
+  >
+    CONNEXION
+  </a>
+</motion.div>
             </motion.div>
           </div>
         </div>
-
+        
         {/* Indicateur de scroll */}
         <motion.div
           animate={{ y: [0, 10, 0] }}
