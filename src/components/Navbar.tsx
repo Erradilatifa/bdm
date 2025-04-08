@@ -35,7 +35,7 @@ const Navbar = () => {
   {/* Logo */}
   <a href="#" className="flex items-center space-x-2">
     <img 
-      src="/images/WhatsApp Image 2025-04-03 at 14.33.02.jpeg" 
+      src="/images/WhatsApp Image 2025-04-03 at 14.33.02.png" 
       alt="BMD Logo" 
       className="w-90 h-10 rounded-full object-cover" 
     />

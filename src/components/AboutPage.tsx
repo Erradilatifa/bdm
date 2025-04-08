@@ -72,11 +72,6 @@ const AboutPage = () => {
       <p className="text-xl md:text-2xl font-light tracking-wide text-gray-100 max-w-2xl mx-auto leading-relaxed mb-8">
         Découvrez notre histoire, nos valeurs et notre engagement pour une livraison exceptionnelle
       </p>
-      
-      {/* CTA Button */}
-      <button className="mt-8 px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 shadow-lg">
-        Notre Mission
-      </button>
     </div>
   </div>
   

@@ -59,15 +59,19 @@ const HeroSection = () => {
                 transition={{ delay: 0.6 }}
                 className="flex flex-wrap gap-4 mt-6"
               >
+                <a href="/contact">
                 <Button className="bg-amber-500 hover:bg-amber-600 px-8 py-6 text-lg font-semibold text-white shadow-lg hover:shadow-amber-500/30 transition-all">
                   Livrer avec BMD
                 </Button>
-                <Button 
-                  variant="outline" 
-                  className="px-8 py-6 text-lg border-2 border-white text-black hover:bg-white/10 hover:text-white"
-                >
-                  Devenir Client
-                </Button>
+                </a>
+                <a href="/login">
+  <Button
+    variant="outline"
+    className="px-8 py-6 text-lg border-2 border-white text-black hover:bg-white/10 hover:text-white"
+  >
+   CONNEXION
+  </Button>
+</a>
               </motion.div>
             </motion.div>
           </div>

@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
 import ContactSection from "./components/ContactSection";
+import BMDLoginPage from "./components/BMDLoginPage";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,8 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
           <Route path="/PrivacyPolicyPage" element={<PrivacyPolicyPage/>} />
           <Route path="/contact" element={<ContactSection/>} />
+          <Route path="/login" element={<BMDLoginPage/>} />
+
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

@@ -13,6 +13,7 @@ import { useEffect } from 'react';
 import AboutPage from '@/components/AboutPage';
 import { ToastProvider } from '@/components/ui/toast';
 import Cities from '@/components/Cities';
+import BMDLoginPage from '@/components/BMDLoginPage';
 
 
 const Index = () => {
@@ -40,6 +41,7 @@ const Index = () => {
         <ServicesSection />
         <TestimonialsSection /><br />
         <Cities/>
+        
       
         <ContactSection />
       </main>
