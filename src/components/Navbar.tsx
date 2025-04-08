@@ -52,11 +52,12 @@ const Navbar = () => {
             <a href="#testimonials" className="animated-border text-gray-700 hover:text-delivery-primary font-medium">Témoignages</a>
             <a href="#contact" className="animated-border text-gray-700 hover:text-delivery-primary font-medium">Contact</a>
           </div>
+          
 
           <div className="hidden md:block">
-  <a href="/contact" className="inline-block">
+  <a href="/PrivacyPolicyPage" className="inline-block">
     <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg">
-      Contact
+    Mentions légales
     </button>
   </a>
 </div>
@@ -86,10 +87,10 @@ const Navbar = () => {
   className="btn-gradient w-full"
   onClick={() => {
     setIsOpen(false);
-    window.location.href = '/contact';
+    window.location.href = '/PrivacyPolicyPage';
   }}
 >
-  Contact
+Mentions légales
 </Button>
             </div>
           </div>
