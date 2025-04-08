@@ -39,7 +39,7 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white" id='about'>
       {/* Hero Section */}
       <header className="relative h-[80vh] overflow-hidden bg-gradient-to-b from-black/20 to-black/70">
   {/* Background image with parallax effect */}

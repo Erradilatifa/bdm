@@ -8,13 +8,13 @@ const HeroSection = () => {
     <>
       <div className="h-16 md:h-20"></div>
       
-      <section className="relative overflow-hidden min-h-screen flex items-center">
+      <section className="relative overflow-hidden min-h-screen flex items-center" id='home'>
         {/* Fond vidéo avec overlay */}
         <div className="absolute inset-0 w-full h-full z-0">
           <div className="absolute inset-0 bg-gray-900">
             <iframe
               className="absolute inset-0 w-full h-full object-cover scale-110 origin-center"
-              src="https://www.youtube.com/embed/YluhsPMQSVE?autoplay=1&mute=1&loop=1&playlist=YluhsPMQSVE&controls=0&showinfo=0&start=6"
+              src="https://www.youtube.com/embed/YluhsPMQSVE?autoplay=1&loop=1&playlist=YluhsPMQSVE&controls=0&showinfo=0&start=6"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -45,13 +45,13 @@ const HeroSection = () => {
                 </h1>
               </motion.div>
 
-           
               {/* Texte avec opacité réduite */}
               <p className="text-lg text-gray-100 max-w-lg mt-6 bg-blue-900/50 px-4 py-3 rounded-lg">
                 BMD est une société située au cœur de la capitale économique du royaume
                 de maroc, notre société dispose de plusieurs compétences dédiée
                 à la satisfaction de nos clients
               </p>
+              
               {/* Boutons CTA */}
               <motion.div
                 initial={{ opacity: 0 }}

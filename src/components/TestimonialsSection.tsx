@@ -8,7 +8,7 @@ const testimonials = [
     name: "Zay Beauty",
     avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCXgD3YkfyFNytqZvUOCYM6QePHegLR7aoRw&s",
     rating: 5,
-    text: "Système saraha très facile et efficace, oli 3ajbni ktar howa l ramassage gratuit",
+    text: "Système saraha très facile et efficace, oli 3ajbni ktar howa l ramassage gratuit.",
     category: "beauté",
   },
   {
@@ -16,7 +16,7 @@ const testimonials = [
     name: "Arwa Fashion",
     avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu8Q34A80Z3A8UVjqM61CK913kQhkzBZWAqw&s",
     rating: 4,
-    text:"كان عندي مشكل مع شركة التوصيل ولكن الحمد لله معاكم ومع سيرفيس ديالكم ما عمري تنجحكم",
+    text:"J’ai testé BMD pour livrer les commandes de mes clients, et maintenant je leur fais confiance. Les colis arrivent en bon état et les clients sont contents.",
     category: "mode",
   },
   {
@@ -31,7 +31,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-16 bg-gradient-to-r from-purple-300 to-blue-300 px-8 py-6 text-lg text-white hover:shadow-lg transition-all duration-200 hover:scale-105">
+    <section className="py-16 bg-gradient-to-r from-purple-300 to-blue-300 px-8 py-6 text-lg text-white hover:shadow-lg transition-all duration-200 hover:scale-105" id='testimonials'>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
         <h2 className="text-3xl font-bold mb-4 text-white">
