@@ -16,7 +16,7 @@ const testimonials = [
     name: "Arwa Fashion",
     avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu8Q34A80Z3A8UVjqM61CK913kQhkzBZWAqw&s",
     rating: 4,
-    text:"J’ai testé BMD pour livrer les commandes de mes clients, et maintenant je leur fais confiance. Les colis arrivent en bon état et les clients sont contents.",
+    text:"Depuis que j’utilise BMD, mes clients reçoivent leurs colis en bon état et sont satisfaits.",
     category: "mode",
   },
   {

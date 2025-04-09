@@ -83,7 +83,7 @@ const Footer = () => {
             <h3 className="text-white text-lg font-semibold mb-6">Liens Rapides</h3>
             <ul className="space-y-4">
               <li>
-                <a href="home" className="text-gray-400 hover:text-amber-400 transition-colors flex items-center">
+                <a href="#home" className="text-gray-400 hover:text-amber-400 transition-colors flex items-center">
                   <ArrowRight className="h-4 w-4 mr-2" />
                   Accueil
                 </a>

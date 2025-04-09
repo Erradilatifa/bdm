@@ -17,19 +17,6 @@ import BMDLoginPage from '@/components/BMDLoginPage';
 
 
 const Index = () => {
-  const { toast } = useToast();
-
-  useEffect(() => {
-    // Welcome toast notification
-    setTimeout(() => {
-      toast({
-        title: "Bienvenue sur Flash Livraison!",
-        description: "Découvrez notre service de livraison rapide et fiable.",
-        duration: 5000,
-      });
-    }, 2000);
-  }, [toast]);
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
