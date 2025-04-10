@@ -168,11 +168,6 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 mt-16 pt-8 text-center text-gray-400 text-sm">
           <p>© {new Date().getFullYear()} BMD. Tous droits réservés.</p>
-          <div className="mt-4">
-            <a href="#" className="text-gray-400 hover:text-amber-400 mx-3">Confidentialité</a>
-            <a href="#" className="text-gray-400 hover:text-amber-400 mx-3">Conditions d'utilisation</a>
-            <a href="#" className="text-gray-400 hover:text-amber-400 mx-3">Support</a>
-          </div>
         </div>
       </div>
     </footer>

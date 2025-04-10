@@ -1,88 +1,187 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Truck, Package, BarChart2, CreditCard } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const ServiceCard = ({ icon: Icon, title, description, color, bgColor, id }) => {
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
+const ServiceCard = ({ icon: Icon, title, description, color, id, imageSrc, index }) => {
+  const cardRef = useRef(null);
+  
+  useEffect(() => {
+    gsap.fromTo(
+      cardRef.current,
+      { 
+        y: 50,
+        opacity: 0 
+      },
+      { 
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        delay: index * 0.2,
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: "top bottom-=100",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+  }, [index]);
+
   return (
-    <div id={id} className="flex items-start p-4 rounded-lg mb-4 hover:shadow-md transition-all duration-300 bg-white">
-      <div className="flex-shrink-0 mr-4">
-        <div className="p-3 rounded-full" style={{ backgroundColor: bgColor }}>
-          <Icon size={22} style={{ color: color }} />
-        </div>
+    <div 
+      id={id} 
+      ref={cardRef} 
+      className="flex flex-col bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
+    >
+      {/* Image section - uniform height */}
+      <div className="h-48 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900/40 z-10"></div>
+        <img
+          src={imageSrc}
+          alt={`${title} service`}
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+        />
       </div>
-      <div className="flex-grow">
-        <h3 className="text-lg font-bold mb-1 text-gray-800">{title}</h3>
-        <p className="text-sm text-gray-600">{description}</p>
+      
+      {/* Content section */}
+      <div className="p-5 flex-grow flex flex-col">
+        <div className="flex items-center mb-3">
+          <div className="p-2 rounded-full mr-3" style={{ backgroundColor: `${color}20` }}>
+            <Icon size={20} color={color} />
+          </div>
+          <h3 className="text-lg font-bold text-gray-800">{title}</h3>
+        </div>
+        <p className="text-gray-600 text-sm">{description}</p>
       </div>
     </div>
   );
 };
 
 const ServicesSection = () => {
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const ctaRef = useRef(null);
+
   const services = [
     {
       icon: Package,
       title: "Ramassage",
       description: "BMD assure le ramassage de vos colis, un de nos agents va se déplacer chez vous pour ramasser vos colis.",
       color: "#e63946",
-      bgColor: "#ffcdd2",
-      id: "service-ramassage"
+      id: "service-ramassage",
+      imageSrc: "images/4.png"
     },
     {
       icon: Truck,
       title: "Livraison",
       description: "BMD assure la livraison de vos colis dans les plus brefs délais, 24h pour la plupart des villes, et 48h pour le reste.",
       color: "#1d3557",
-      bgColor: "#c8e0f4",
-      id: "service-livraison"
+      id: "service-livraison",
+      imageSrc: "images/téléchargement (5).png"
     },
     {
       icon: BarChart2,
       title: "Suivi",
       description: "BMD assure le suivi de vos colis avec vos clients, et la mise à jour des états des colis dans moins de 48h.",
       color: "#2a9d8f",
-      bgColor: "#c8ede9",
-      id: "service-suivi"
+      id: "service-suivi",
+      imageSrc: "https://img.freepik.com/free-photo/close-up-delivery-man-with-tablet_23-2149035867.jpg?uid=R134444413&ga=GA1.1.1809202442.1705419947&semt=ais_hybrid&w=740"  // Placeholder image instead of external URL
     },
     {
       icon: CreditCard,
       title: "Retour du fond",
       description: "BMD garantit le paiement de la totalité de vos colis livrés deux fois par semaine en toute sécurité et rapidité.",
       color: "#f77f00",
-      bgColor: "#ffebcc",
-      id: "service-retour"
+      id: "service-retour",
+      imageSrc: "images/3.png"
     }
   ];
   
+  useEffect(() => {
+    // Animate section heading and subtitle
+    gsap.fromTo(
+      titleRef.current,
+      { y: -30, opacity: 0 },
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top center+=100",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+    
+    gsap.fromTo(
+      subtitleRef.current,
+      { y: -20, opacity: 0 },
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 0.8,
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top center+=100",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+    
+    // CTA button animation
+    gsap.fromTo(
+      ctaRef.current,
+      { scale: 0.8, opacity: 0 },
+      { 
+        scale: 1, 
+        opacity: 1, 
+        duration: 0.6,
+        delay: 1.2,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: ctaRef.current,
+          start: "top bottom-=100",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+  }, []);
+
   return (
-    <div id="services" className="bg-gray-50 py-16 px-4">
+    <div 
+      id="services" 
+      ref={sectionRef}
+      className="bg-gradient-to-b from-gray-50 to-gray-100 py-16 px-4"
+    >
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent drop-shadow-lg">
-          Pourquoi BMD est le meilleur partenaire pour vos livraisons e-commerce ?
-        </h2>
-       
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Colonne des services */}
-          <div className="space-y-6">
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
-          </div>
-         
-          {/* Colonne de l'image */}
-          <div id="dashboard-preview" className="bg-white p-4 rounded-lg shadow-lg">
-            <img
-              src="https://cathedis.ma/wp-content/uploads/2022/03/DASHBOARD-RDF.png"
-              alt="Dashboard de suivi des livraisons"
-              className="w-full rounded-lg"
-            />
-          </div>
+        <div className="text-center mb-12">
+          <h2 ref={titleRef} className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+          Découvrez tous les services de  <span className="text-blue-600">BMD</span>
+          </h2>
+          <p ref={subtitleRef} className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Le meilleur partenaire pour vos livraisons e-commerce
+          </p>
         </div>
-       
-        <div id="contact-cta" className="mt-12 text-center">
+        
+        {/* Grid layout instead of stacked */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} index={index} />
+          ))}
+        </div>
+        
+        <div id="contact-cta" className="mt-16 text-center">
           <Link
+            ref={ctaRef}
             to="/contact"
-            className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-6 px-20 rounded-full shadow-lg transition-all duration-300 inline-block"
+            className="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold py-3 px-8 md:py-4 md:px-12 rounded-full shadow-lg transition-all duration-300 inline-block hover:shadow-xl hover:scale-105"
           >
             Contactez-nous dès maintenant
           </Link>

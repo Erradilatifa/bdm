@@ -14,6 +14,9 @@ import AboutPage from '@/components/AboutPage';
 import { ToastProvider } from '@/components/ui/toast';
 import Cities from '@/components/Cities';
 import BMDLoginPage from '@/components/BMDLoginPage';
+import Ecommerce from '@/components/Ecommerce';
+import Pourqoi from '@/components/StatsSection';
+import StatsSection from '@/components/StatsSection';
 
 
 const Index = () => {
@@ -24,10 +27,14 @@ const Index = () => {
         <HeroSection />
         <AnimatedFeatures />
         <AboutPage/>
+        <StatsSection/>
 
         <ServicesSection />
         <Cities/>
+        <Ecommerce/><br /><br />
+       
         <TestimonialsSection /><br />
+        
         
         
       
